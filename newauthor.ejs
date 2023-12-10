@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajouter un nouvel auteur</title>
+  </head>
+  <body>
+    <h1>Ajouter un nouvel auteur</h1>
+    <form action="/authors" method="post">
+      <label for="nom">Nom :</label>
+      <input type="text" name="nom" required /><br />
+      <label for="prenom">Prénom :</label>
+      <input type="text" name="prenom" required /><br />
+      <label for="dateNaissance">Date de naissance :</label>
+      <input type="date" name="dateNaissance" required /><br />
+      <label for="dateDeces">Date de décès :</label>
+      <input type="date" name="dateDeces" /><br />
+      <button type="submit">Ajouter</button>
+    </form>
+    <a href="/authors">Retour à la liste des auteurs</a>
+  </body>
+</html>

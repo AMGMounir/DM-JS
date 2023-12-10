@@ -1,0 +1,10 @@
+<ul>
+  <% books.forEach(book => { %>
+  <li>
+    <%= book.titre %> par <%= book.auteur.prenom %> <%= book.auteur.nom %>
+    <a href="/books/edit/<%= book._id %>">Éditer</a>
+    <a href="/books/delete/<%= book._id %>">Supprimer</a>
+  </li>
+  <% }); %>
+</ul>
+<a href="/books/new">Ajouter un nouveau Livre</a>

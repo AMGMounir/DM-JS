@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Éditer un auteur</title>
+  </head>
+  <body>
+    <h1>Éditer un auteur</h1>
+    <form action="/authors/edit/<%= author._id %>" method="post">
+      <label for="nom">Nom :</label>
+      <input type="text" name="nom" value="<%= author.nom %>" required /><br />
+      <label for="prenom">Prénom :</label>
+      <input
+        type="text"
+        name="prenom"
+        value="<%= author.prenom %>"
+        required
+      /><br />
+      <label for="dateNaissance">Date de naissance :</label>
+      <input
+        type="date"
+        name="dateNaissance"
+        value="<%= author.dateNaissance.toISOString().split('T')[0] %>"
+        required
+      /><br />
+      <label for="dateDeces">Date de décès :</label>
+      <input
+        type="date"
+        name="dateDeces"
+        value="<%= author.dateDeces ? author.dateDeces.toISOString().split('T')[0] : '' %>"
+      /><br />
+      <button type="submit">Mettre à jour</button>
+    </form>
+    <a href="/authors">Retour à la liste des auteurs</a>
+  </body>
+</html>

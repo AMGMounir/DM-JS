@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajouter un nouveau livre</title>
+  </head>
+  <body>
+    <h1>Ajouter un nouveau livre</h1>
+    <form action="/books" method="post">
+      <label for="titre">Titre :</label>
+      <input type="text" name="titre" required /><br />
+      <label for="auteur">Auteur :</label>
+      <select name="auteur" required>
+        <% authors.forEach(author => { %>
+        <option value="<%= author._id %>">
+          <%= author.prenom %> <%= author.nom %>
+        </option>
+        <% }); %></select
+      ><br />
+      <label for="resume">Résumé :</label>
+      <textarea name="resume" required></textarea><br />
+      <label for="isbn">ISBN :</label>
+      <input type="text" name="isbn" required /><br />
+      <button type="submit">Ajouter</button>
+    </form>
+    <a href="/books">Retour à la liste des livres</a>
+  </body>
+</html>

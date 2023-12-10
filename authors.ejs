@@ -1,0 +1,12 @@
+<h1>Liste des auteurs</h1>
+<ul>
+  <% authors.forEach(author => { %>
+  <li>
+    <%= author.prenom %> <%= author.nom %> (<%= author.dateNaissance %> - <%=
+    author.dateDeces || 'en vie' %>)
+    <a href="/authors/edit/<%= author._id %>">Éditer</a>
+    <a href="/authors/delete/<%= author._id %>">Supprimer</a>
+  </li>
+  <% }); %>
+</ul>
+<a href="/authors/new">Ajouter un nouvel auteur</a>
